@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is services page</h1>
+    <hr>
+
+    <!-- Using Fragment -->
+     <div th:replace="~{base::parent('services one','services two',~{::p})}">
+        <p>This is dynamic content</p>
+     </div>
+     
+     <hr>
+     <!-- Using Fragement two -->
+      <div th:replace="~{base::parent2(~{::section})}">
+        <section>
+            <h1>This is parent2 Header section</h1>
+            <p>This is parent2 Peragraph section</p>
+        </section>        
+      </div>
+      <hr>
+      <div th:replace="~{base::parent2(~{::#first_content})}">
+        <section id="first_content">
+            <h1>This is First Content</h1>
+        </section>        
+      </div>
+      <hr>
+      <div th:replace="~{base::parent2(~{::.second_content})}">
+        <section class="second_content">
+            <h1>This is Second Content</h1>
+        </section>        
+      </div>
+</body>
+</html>
